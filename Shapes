@@ -5,12 +5,18 @@ class Ape extends Calculation{
         System.out.println("Please enter radius");
         float radius = scanner.nextFloat();
         double circleArea = circleArea(radius);
+        double circlePerimeter = circlePerimeter(radius);
         System.out.println(circleArea);
+
     }
 }
 class Calculation{
     public static double circleArea(float radius){
         double circleArea = Math.PI * radius * radius;
         return circleArea;
+    }
+    public static double circlePerimeter (float radius){
+        double circlePerimeter = 2 * Math.PI * radius;
+        return circlePerimeter;
     }
 }
