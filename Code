@@ -15,5 +15,10 @@ class Main {
     public static double AreaOfCircle(float radius) {
         double Area = Math.PI * radius * radius;
         return Area;
+        //Need Rounding
+    }
+    public static double AreaOfTriangle(float height, float base){
+      double Area = (base * height)/2;
+      return Area;
     }
 }
