@@ -1,7 +1,5 @@
-package javaapplication;
-
 import java.util.Scanner;
-class Ape extends Calculation{
+class Main extends Calculation{
     public static void main(String args[]) {
         Scanner reader = new Scanner(System.in);
         System.out.println("Enter a shape:\ncircle \nrectangle");
@@ -15,24 +13,20 @@ class Ape extends Calculation{
         System.out.printf("The area of your circle is %.2f",circleArea);
         System.out.println("");
         System.out.printf("The perimeter of your circle is %.2f",circlePerimeter);
+    }
 }
 class Calculation{
-    public double circleArea(float radius){
+    public  double circleArea(float radius){
         double circleArea = Math.PI * radius * radius;
         return circleArea;
     }
-    public double circlePerimeter (float radius){
+    public  double circlePerimeter (float radius){
         double circlePerimeter = 2 * Math.PI * radius;
         return circlePerimeter;
     }
-    public double rectangleArea (float height,float base){
-        double rectangleArea = height * base;
-        return rectangleArea;
-    }
-    public double rectanglePerimeter(float height,float base){
-        double rectanglePerimeter = (2* base) + (2 * height);
-        return rectanglePerimeter;
+    public  double rectanglePerimeter (float height, float base){
+      double rectanglePerimeter = (2 * height + 2 * base);
+      return rectanglePerimeter;
     }
 }
-    }
 }
