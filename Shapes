@@ -23,8 +23,4 @@ class Calculation{
       double squareArea = base * height;
       return squareArea;
     }
-    public static double squarePerimeter(float sideLength){
-      double squarePerimeter = 4 * sideLength;
-      return squarePerimeter;
-    }
 }
