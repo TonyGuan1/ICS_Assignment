@@ -1,3 +1,5 @@
+package javaapplication;
+
 import java.util.Scanner;
 class Ape extends Calculation{
     public static void main(String args[]) {
@@ -6,7 +8,7 @@ class Ape extends Calculation{
         float radius = scanner.nextFloat();
         double circleArea = circleArea(radius);
         double circlePerimeter = circlePerimeter(radius);
-        System.out.println(circleArea);
+        System.out.printf("Value of %.2f",circleArea);
 
     }
 }
@@ -19,12 +21,12 @@ class Calculation{
         double circlePerimeter = 2 * Math.PI * radius;
         return circlePerimeter;
     }
-    public static double squareArea (float base, float height){
-      double squareArea = base * height;
-      return squareArea;
+    public static double squareArea (float height,float base){
+        double squareArea = height * base;
+        return squareArea;
     }
     public static double squarePerimeter(float sideLength){
-      double squarePerimeter = 4 * sideLength;
-      return squarePerimeter;
-    }
+        double squarePerimeter = 4 * sideLength;
+        return squarePerimeter;
+      }
 }
