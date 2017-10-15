@@ -4,31 +4,35 @@ import java.util.Scanner;
 class Ape extends Calculation{
     public static void main(String args[]) {
         Scanner reader = new Scanner(System.in);
-        System.out.println("Enter a shape:\ncircle \nrectangle \nsquare");
+        System.out.println("Enter a shape:\ncircle \nrectangle");
         String shape = reader.nextLine();
-        if (shape.equals("circle")){
+        if (shape.equals("circle"))
+        {
         System.out.println("Please enter radius");
         float radius = Float.parseFloat(reader.nextLine());
         double circleArea = circleArea(radius);
         double circlePerimeter = circlePerimeter(radius);
-        System.out.println(circleArea);
-        System.out.println(circlePerimeter);
+        System.out.printf("The area of your circle is %.2f",circleArea);
+        System.out.println("");
+        System.out.printf("The perimeter of your circle is %.2f",circlePerimeter);
 }
 class Calculation{
-    public static double circleArea(float radius){
+    public double circleArea(float radius){
         double circleArea = Math.PI * radius * radius;
         return circleArea;
     }
-    public static double circlePerimeter (float radius){
+    public double circlePerimeter (float radius){
         double circlePerimeter = 2 * Math.PI * radius;
         return circlePerimeter;
     }
-    public static double squareArea (float height,float base){
-        double squareArea = height * base;
-        return squareArea;
+    public double rectangleArea (float height,float base){
+        double rectangleArea = height * base;
+        return rectangleArea;
     }
-    public static double squarePerimeter(float sideLength){
-        double squarePerimeter = 4 * sideLength;
-        return squarePerimeter;
-      }
+    public double rectanglePerimeter(float height,float base){
+        double rectanglePerimeter = (2* base) + (2 * height);
+        return rectanglePerimeter;
+    }
+}
+    }
 }
