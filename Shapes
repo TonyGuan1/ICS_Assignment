@@ -19,4 +19,8 @@ class Calculation{
         double circlePerimeter = 2 * Math.PI * radius;
         return circlePerimeter;
     }
+    public static double squareArea (float base, float height){
+      double squareArea = base * height;
+      return squareArea;
+    }
 }
