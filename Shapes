@@ -3,14 +3,16 @@ package javaapplication;
 import java.util.Scanner;
 class Ape extends Calculation{
     public static void main(String args[]) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner reader = new Scanner(System.in);
+        System.out.println("Enter a shape:\ncircle \nrectangle \nsquare");
+        String shape = reader.nextLine();
+        if (shape.equals("circle")){
         System.out.println("Please enter radius");
-        float radius = scanner.nextFloat();
+        float radius = Float.parseFloat(reader.nextLine());
         double circleArea = circleArea(radius);
         double circlePerimeter = circlePerimeter(radius);
-        System.out.printf("Value of %.2f",circleArea);
-
-    }
+        System.out.println(circleArea);
+        System.out.println(circlePerimeter);
 }
 class Calculation{
     public static double circleArea(float radius){
