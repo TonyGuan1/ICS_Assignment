@@ -7,7 +7,6 @@ Created Class "Calculation"
 	- Added squarePerimeter calculation
 	- Added squareArea calculation
 
-
 9:21 AM 10/14/2017
 Created Class "Shape"
 	- Added userinput
