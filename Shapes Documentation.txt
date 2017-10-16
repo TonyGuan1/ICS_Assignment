@@ -11,5 +11,6 @@ Created Class "Calculation"
 9:21 AM 10/14/2017
 Created Class "Shape"
 	- Added userinput
-	- Created output
-		- 
+	- Created output for caluclations
+		- Ex print squareArea
+9:41 AM 10/15/2017
