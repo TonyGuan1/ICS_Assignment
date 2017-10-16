@@ -1,0 +1,15 @@
+9:20 AM 10/14/2017
+
+Created Class "Calculation"
+	- Added circleArea calculation
+	- Added circlePerimeter calculation
+9:25 AM 10/14/2017
+	- Added squarePerimeter calculation
+	- Added squareArea calculation
+
+
+9:21 AM 10/14/2017
+Created Class "Shape"
+	- Added userinput
+	- Created output
+		- 
