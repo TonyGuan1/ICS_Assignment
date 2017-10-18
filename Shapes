@@ -3,26 +3,41 @@ import java.util.Scanner;
 class Main extends Calculation{
     public static void main(String args[]) {
         Scanner reader = new Scanner(System.in);
-        System.out.println("Enter a shape:\ncircle \nrectangle \nsquare");
-        String shape = reader.nextLine();
-        if (shape.equals("circle")){
-          System.out.println("Please enter radius");
-          float radius = Float.parseFloat(reader.nextLine());
-          double circleArea = circleArea(radius);
-          double circlePerimeter = circlePerimeter(radius);
-          System.out.println(circleArea);
-          System.out.println(circlePerimeter);}
+        while(true){
+          try{
+            System.out.println("\nEnter a shape:\ncircle \nrectangle \nsquare");
+            String shape = reader.nextLine();
+            if (shape.equals("circle")){
+              System.out.println("Please enter radius");
+              float radius = Float.parseFloat(reader.nextLine());
+              double circleArea = circleArea(radius);
+              double circlePerimeter = circlePerimeter(radius);
+              System.out.println(circleArea);
+              System.out.println(circlePerimeter);
+              break;
+            }
         
-        else if(shape.equals("square")){
-          System.out.println("Please enter height");
-          float height = Float.parseFloat(reader.nextLine());
-          System.out.println("Please enter Base");
-          float base = Float.parseFloat(reader.nextLine());
-          double squareArea = squareArea(height, base);
-          double squarePerimeter = squarePerimeter(height, base);
-          System.out.println(squareArea);
-          System.out.println(squarePerimeter);
+            else if(shape.equals("rectangle")){
+              System.out.println("Please enter height");
+              float height = Float.parseFloat(reader.nextLine());
+              System.out.println("Please enter Base");
+              float base = Float.parseFloat(reader.nextLine());
+              double rectangleArea = rectangleArea(height, base);
+              double rectanglePerimeter = rectanglePerimeter(height, base);
+              System.out.println(rectangleArea);
+              System.out.println(rectanglePerimeter);
+              break;
+            }
+            else{
+              System.out.println("\nThat is not a valid choice");
+            }
+          }
+          catch (Exception e){
+            System.out.println("\nThat is not valid input");
+          }
+        
         }
+        
 }
 }
 class Calculation{
@@ -34,12 +49,12 @@ class Calculation{
         double circlePerimeter = 2 * Math.PI * radius;
         return circlePerimeter;
     }
-    public static double squareArea (float height,float base){
-        double squareArea = height * base;
-        return squareArea;
+    public static double rectangleArea (float height,float base){
+        double rectangleArea = height * base;
+        return rectangleArea;
     }
-    public static double squarePerimeter(float height, float base){
-        double squarePerimeter = (2 * height) + (2 * base);
-        return squarePerimeter;
+    public static double rectanglePerimeter(float height, float base){
+        double rectanglePerimeter = (2 * height) + (2 * base);
+        return rectanglePerimeter;
       }
 }
