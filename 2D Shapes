@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+class Main extends Calculation{ //Inherits from Calculation class
+    public static void main(String args[]) {
+        Scanner reader = new Scanner(System.in);
+    }
+}
+
+class Calculation{
+    public static double circleArea(float radius){
+        double circleArea = Math.PI * radius * radius;
+        return circleArea;
+    }
+    public static double circlePerimeter (float radius){
+        double circlePerimeter = 2 * Math.PI * radius;
+        return circlePerimeter;
+    }
+    public static double rectangleArea (float height,float base){
+        double rectangleArea = height * base;
+        return rectangleArea;
+    }
+    public static double rectanglePerimeter(float height, float base){
+        double rectanglePerimeter = (2 * height) + (2 * base);
+        return rectanglePerimeter;
+    }
+}
