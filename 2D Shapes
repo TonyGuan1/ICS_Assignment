@@ -1,32 +1,45 @@
+
 import java.util.Scanner;
 class Main extends Calculation{
     public static void main(String args[]) {
         Scanner reader = new Scanner(System.in);
-        System.out.println("Enter a shape:\ncircle \nrectangle");
+        System.out.println("Enter a shape:\ncircle \nrectangle \nsquare");
         String shape = reader.nextLine();
-        if (shape.equals("circle"))
-        {
-        System.out.println("Please enter radius");
-        float radius = Float.parseFloat(reader.nextLine());
-        double circleArea = circleArea(radius);
-        double circlePerimeter = circlePerimeter(radius);
-        System.out.printf("The area of your circle is %.2f",circleArea);
-        System.out.println("");
-        System.out.printf("The perimeter of your circle is %.2f",circlePerimeter);
-    }
+        if (shape.equals("circle")){
+          System.out.println("Please enter radius");
+          float radius = Float.parseFloat(reader.nextLine());
+          double circleArea = circleArea(radius);
+          double circlePerimeter = circlePerimeter(radius);
+          System.out.println(circleArea);
+          System.out.println(circlePerimeter);}
+        
+        else if(shape.equals("square")){
+          System.out.println("Please enter height");
+          float height = Float.parseFloat(reader.nextLine());
+          System.out.println("Please enter Base");
+          float base = Float.parseFloat(reader.nextLine());
+          double squareArea = squareArea(height, base);
+          double squarePerimeter = squarePerimeter(height, base);
+          System.out.println(squareArea);
+          System.out.println(squarePerimeter);
+        }
+}
 }
 class Calculation{
-    public  double circleArea(float radius){
+    public static double circleArea(float radius){
         double circleArea = Math.PI * radius * radius;
         return circleArea;
     }
-    public  double circlePerimeter (float radius){
+    public static double circlePerimeter (float radius){
         double circlePerimeter = 2 * Math.PI * radius;
         return circlePerimeter;
     }
-    public  double rectanglePerimeter (float height, float base){
-      double rectanglePerimeter = (2 * height + 2 * base);
-      return rectanglePerimeter;
+    public static double squareArea (float height,float base){
+        double squareArea = height * base;
+        return squareArea;
     }
+    public static double squarePerimeter(float height, float base){
+        double squarePerimeter = (2 * height) + (2 * base);
+        return squarePerimeter;
+      }
 }
-} 
