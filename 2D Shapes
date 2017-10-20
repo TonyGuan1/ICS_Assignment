@@ -1,48 +1,52 @@
 
 import java.util.Scanner;
-class Main extends Calculation{
+class Main extends Calculation{ //Inherits from Calculation class
     public static void main(String args[]) {
         Scanner reader = new Scanner(System.in);
         while(true){
           try{
-            System.out.println("\nEnter a shape:\ncircle \nrectangle \nsquare");
+            System.out.println("Determining the area/perimeter of a 2D shape.");
+            System.out.println("Choose a shape:\n\nCircle \nRectangle");
             String shape = reader.nextLine();
-            if (shape.equals("circle")){
+            
+            if (shape.equalsIgnoreCase("Circle")){ //User picks shape
               System.out.println("Please enter radius");
               float radius = Float.parseFloat(reader.nextLine());
               double circleArea = circleArea(radius);
               double circlePerimeter = circlePerimeter(radius);
-              System.out.println(circleArea);
-              System.out.println(circlePerimeter);
+              System.out.printf("The area of the circle is %.2f ",circleArea);
+              System.out.println("");
+              System.out.printf("The perimter of the circle is %.2f ",circlePerimeter);
               break;
             }
         
-            else if(shape.equals("rectangle")){
+            else if(shape.equalsIgnoreCase("Rectangle")){
               System.out.println("Please enter height");
               float height = Float.parseFloat(reader.nextLine());
               System.out.println("Please enter Base");
               float base = Float.parseFloat(reader.nextLine());
               double rectangleArea = rectangleArea(height, base);
               double rectanglePerimeter = rectanglePerimeter(height, base);
-              System.out.println(rectangleArea);
-              System.out.println(rectanglePerimeter);
+              System.out.printf("The area of the rectangle is %.2f",rectangleArea);
+              System.out.println("");
+              System.out.printf("The perimeter of the rectangle is %.2f",rectanglePerimeter);
+              System.out.println("");
               if (base == height){
-                System.out.println("This is actually a square (another type of rectangle)");
+                System.out.println("\nThis is actually a square!\nA special type of rectangle");
               }
               break;
             }
             else{
-              System.out.println("\nThat is not a valid choice");
+              System.out.println("That is not a valid choice\n");
             }
           }
           catch (Exception e){
-            System.out.println("\nThat is not valid input");
+            System.out.println("That is not valid input\n");
           }
-        
         }
-        
+    }
 }
-}
+
 class Calculation{
     public static double circleArea(float radius){
         double circleArea = Math.PI * radius * radius;
