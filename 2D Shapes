@@ -26,6 +26,9 @@ class Main extends Calculation{
               double rectanglePerimeter = rectanglePerimeter(height, base);
               System.out.println(rectangleArea);
               System.out.println(rectanglePerimeter);
+              if (base == height){
+                System.out.println("This is actually a square (another type of rectangle)");
+              }
               break;
             }
             else{
