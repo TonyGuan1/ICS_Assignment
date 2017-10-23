@@ -1,67 +1,74 @@
 
-import java.util.Scanner;
-class Main extends Calculation{ //Inherits from Calculation class
-    public static void main(String args[]) {
-        Scanner reader = new Scanner(System.in);
-        while(true){
-          try{
-            System.out.println("Determining the area/perimeter of a 2D shape.");
-            System.out.println("Choose a shape:\n\nCircle \nRectangle");
-            String shape = reader.nextLine();
-            
-            if (shape.equalsIgnoreCase("Circle")){ //User picks shape
-              System.out.println("Please enter radius");
-              float radius = Float.parseFloat(reader.nextLine());
-              double circleArea = circleArea(radius);
-              double circlePerimeter = circlePerimeter(radius);
-              System.out.printf("The area of the circle is %.2f ", Math.abs(circleArea));
-              System.out.println("");
-              System.out.printf("The circumference of the circle is %.2f ", Math.abs(circlePerimeter));
-              break;
-            }
-        
-            else if(shape.equalsIgnoreCase("Rectangle")){
-              System.out.println("Please enter height");
-              float height = Float.parseFloat(reader.nextLine());
-              System.out.println("Please enter Base");
-              float base = Float.parseFloat(reader.nextLine());
-              double rectangleArea = rectangleArea(height, base);
-              double rectanglePerimeter = rectanglePerimeter(height, base);
-              System.out.printf("The area of the rectangle is %.2f",rectangleArea);
-              System.out.println("");
-              System.out.printf("The perimeter of the rectangle is %.2f",rectanglePerimeter);
-              System.out.println("");
-              if (base == height){
-                System.out.println("\nThis is actually a square!\nA special type of rectangle");
-              }
-              break;
-            }
-            else{
-              System.out.println("That is not a valid choice\n");
-            }
-          }
-          catch (Exception e){
-            System.out.println("That is not valid input\n");
-          }
-        }
+
+import java.util.*;
+
+class calRec {
+    double length;
+    double width;
+    calRec(double l, double w) {
+        length = l;
+        width = w;
+    }
+    double AreaRectangle() {
+        return length * width;
+    }
+    calRec(double l) {
+        length = l;
+    }
+
+    double PerimeterRectangle() {
+        return 2 * (length + width);
     }
 }
 
-class Calculation{
-    public static double circleArea(float radius){
-        double circleArea = Math.PI * radius * radius;
-        return circleArea;
+class calCir {
+    double radius;
+    calCir(double r) {
+        radius = r;
     }
-    public static double circlePerimeter (float radius){
-        double circlePerimeter = 2 * Math.PI * radius;
-        return circlePerimeter;
+    double AreaCircle() {
+        return Math.PI * (radius * radius);
     }
-    public static double rectangleArea (float height,float base){
-        double rectangleArea = height * base;
-        return rectangleArea;
+    double CircumferenceCircle() {
+        return 2 * Math.PI * radius;
     }
-    public static double rectanglePerimeter(float height, float base){
-        double rectanglePerimeter = (2 * height) + (2 * base);
-        return rectanglePerimeter;
+}
+class Main {
+    public static void main(String args[]) {
+        Scanner b = new Scanner(System.in);
+        while (true) {
+            try {
+                System.out.println("Determining the area/perimeter of a 2D shape.");
+                System.out.println("Choose a shape:\n\nRectangle --> (Type a or rectangle)\nCircle    --> (Type b or circle)");
+                String shape = b.nextLine();
+
+                if ((shape.equalsIgnoreCase("Rectangle")) || (shape.equalsIgnoreCase("a"))) {
+                    System.out.println("Input Length");
+                    double length = b.nextDouble();
+                    System.out.println("Input width");
+                    double width = b.nextDouble();
+                    calRec Arectangle = new calRec(length, width);
+                    calRec Prectangle = new calRec(length, width);
+                    System.out.println("Area of rectangle is " + Arectangle.AreaRectangle());
+                    System.out.println("The perimeter is " + Prectangle.PerimeterRectangle());
+                    if (length == width){
+                      System.out.println("This is a special type of reactangle, a square!");
+                    }
+                    break;
+                } else if ((shape.equalsIgnoreCase("circle")) || (shape.equalsIgnoreCase("b"))) {
+                    System.out.println("Input Radius");
+                    double radius = b.nextDouble();
+                    calCir AreaCircle = new calCir(radius);
+                    calCir CircumferenceCircle = new calCir(radius);
+                    System.out.println("Area of rectangle is " + AreaCircle.AreaCircle());
+                    System.out.println("The circumference is " + CircumferenceCircle.CircumferenceCircle());
+                    break;
+                } else {
+                    System.out.println("Not valid choice\n");
+                }
+            } catch (Exception e) {
+                System.out.println("Not valid choice\n");
+            }
+        }
     }
 }
